@@ -2,7 +2,8 @@ import pytesseract
 import cv2
 from tkinter import *
 
-frame = cv2.imread('image.jpg')
+cam = cv2.VideoCapture(0)
+ret, frame = cam.read()
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 frase = pytesseract.image_to_string(frame, lang='por')
